@@ -59,3 +59,65 @@ child = Ticket(False, True)
 print(adult.price()*2 + child.price())
 ```
 
+#### 5. 上面提到了许多魔法方法，如`__new__`, `__init__`, `__str__`, `__repr__`, `__getitem__`, `__setitem__`等等，请总结它们各自的使用方法。
+
+- `__new__`方法是对象实例化时调用的第一个方法，该方法仅读取一个cls参数后再把其他参数都传给用于指明对象初始化行为的`__init__`方法，也就是说我们可以在一个对象初始化之前进行其他操作，比如检查是否合法等
+
+- `__init__ ` 构造函数，在生成对象时调用
+- `__str__`定义对类的实例调用`str()`时的行为
+- `__repr__`是`__str__`的备胎.如果有`__str__`方法,那么先去执行`__str__`方法,并且使用`__str__`的返回值
+- `__getitem__` 按照索引获取值
+- `__setitem__`  按照索引赋值
+
+#### 6. 利用python做一个简单的定时器类
+
+要求:
+
+- 定制一个计时器的类。
+
+- `start`和`stop`方法代表启动计时和停止计时。
+
+- 假设计时器对象`t1`，`print(t1)`和直接调用`t1`均显示结果。
+
+- 当计时器未启动或已经停止计时时，调用`stop`方法会给予温馨的提示。
+
+- 两个计时器对象可以进行相加：`t1+t2`。
+
+- 只能使用提供的有限资源完成。
+
+```python
+import time
+
+
+class Timer(object):
+    def __init__(self):
+        self.__info = '未开始计时！'
+        self.__begin = None
+        self.__end = None
+        self.__jg = 0
+
+    def __str__(self):
+        return self.__info
+
+    def __repr__(self):
+        return self.__info
+
+    def start(self):
+        print('计时开始...')
+        self.__begin = time.localtime()
+
+    def stop(self):
+        if not self.__begin:
+            print('提示：请先调用start()开始计时！')
+            return
+        self.__end = time.localtime()
+        self.__jg = time.mktime(self.__end) - time.mktime(self.__begin)
+        self.__info = '运行了%d秒' % self.__jg
+        print('计时结束！')
+        return self.__jg
+
+    def __add__(self, other):  
+        return '共运行了%d秒' % (other.__jg + self.__jg)
+```
+
+
