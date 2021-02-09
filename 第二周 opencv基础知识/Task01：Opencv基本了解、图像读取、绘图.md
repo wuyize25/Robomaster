@@ -45,7 +45,7 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 ```
 
-![image-20210209143805558](D:\RoboMaster\Robomaster\第二周 opencv基础知识\Task01：Opencv基本了解、图像读取、绘图.assets\image-20210209143805558.png)
+![image-20210209143805558](Robomaster\第二周 opencv基础知识\Task01：Opencv基本了解、图像读取、绘图.assets\image-20210209143805558.png)
 
 #### 2. 使用Opencv，测试一下你电脑摄像头的分辨率和帧率是多少
 
@@ -73,7 +73,7 @@ cap.release()
 cv.destroyAllWindows()
 ```
 
-![image-20210209200248209](D:\RoboMaster\Robomaster\第二周 opencv基础知识\Task01：Opencv基本了解、图像读取、绘图.assets\image-20210209200248209.png)
+![image-20210209200248209](Robomaster\第二周 opencv基础知识\Task01：Opencv基本了解、图像读取、绘图.assets\image-20210209200248209.png)
 
 #### 3. 利用电脑摄像头从外界拍摄一幅自己的图像，添加圆（或其他图形）给自己打码，图片右下角添加自己的网名和时间。
 
@@ -98,4 +98,4 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 ```
 
-![image-20210209202609433](D:\RoboMaster\Robomaster\第二周 opencv基础知识\Task01：Opencv基本了解、图像读取、绘图.assets\image-20210209202609433.png)
+![image-20210209202609433](Robomaster\第二周 opencv基础知识\Task01：Opencv基本了解、图像读取、绘图.assets\image-20210209202609433.png)
