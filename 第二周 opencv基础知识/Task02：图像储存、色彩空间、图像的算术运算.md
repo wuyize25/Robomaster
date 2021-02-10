@@ -53,3 +53,30 @@ cv.destroyAllWindows()
 ```
 
 ![image-20210209221813111](Task02：图像储存、色彩空间、图像的算术运算.assets/image-20210209221813111.png)
+
+#### 2. 创建一个视频用来演示一幅图如何平滑的转换成另一幅图（使用函数[cv.addWeighted](https://docs.opencv.org/4.1.0/d2/de8/group__core__array.html#gafafb2513349db3bcff51f54ee5592a19)）
+
+```python
+import cv2 as cv
+
+img1 = cv.imread('awesomeface.png')
+img2 = cv.imread('container.jpg')
+img2 = cv.resize(img2, img1.shape[:2])
+video = cv.VideoWriter('result.mp4', cv.VideoWriter_fourcc(*'MP4V'), 30, img1.shape[:2])
+for i in range(0, 101):
+    y = i / 100
+    x = 1 - y
+    frame = cv.addWeighted(img1, x, img2, y, 0)
+    video.write(frame)
+    cv.imshow('frame', frame)
+    cv.waitKey(1)
+
+cv.waitKey(0)
+video.release()
+cv.destroyAllWindows()
+```
+
+<video id="video" controls="" preload="none">
+    <source id="mp4" src="Task02：图像储存、色彩空间、图像的算术运算.assets/result.mp4" type="video/mp4">
+</video>
+
