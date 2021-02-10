@@ -76,7 +76,4 @@ video.release()
 cv.destroyAllWindows()
 ```
 
-<video id="video" controls="" preload="none">
-    <source id="mp4" src="Task02：图像储存、色彩空间、图像的算术运算.assets/result.mp4" type="video/mp4">
-</video>
-
+[视频](Task02：图像储存、色彩空间、图像的算术运算.assets/result.mp4)
